@@ -1,0 +1,16 @@
+name: workflow2
+
+on: push
+
+jobs:
+  tareas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bajar codigo
+        uses: actions/checkout@v4
+
+      - name: Bajar pytest
+        run: pip install pytest
+
+      - name: Probar codigo
+        run: python3 -m pytest test.py
